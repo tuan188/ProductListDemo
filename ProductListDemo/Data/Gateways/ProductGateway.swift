@@ -12,12 +12,12 @@ protocol ProductGatewayType {
 }
 
 struct ProductGateway: ProductGatewayType {
-    let productRepository = ProductRepository()  // database
+//    let productRepository = ProductRepository()  // database
     
     func getProductList() -> Observable<[Product]> {
         return .just([
             Product(id: 1, name: "iPhone", price: 1000),
-            Product(id: 2, name: "Macbook", price: 3000),
+            Product(id: 2, name: "Macbook", price: 3000)
         ])
         
         //        return productRepository.getProductList()

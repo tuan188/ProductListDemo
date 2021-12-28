@@ -8,10 +8,21 @@
 import UIKit
 
 protocol ProductsNavigatorType {
-    
+    func toProductDetail(product: Product)
 }
 
 struct ProductsNavigator: ProductsNavigatorType {
     unowned let assembler: Assembler
     unowned let navigationController: UINavigationController
+    
+    func toProductDetail(product: Product) {
+        print("To product", product.name)
+        
+        let vc: ProductDetailsViewController = assembler.resolve(
+            navigationController: navigationController,
+            product: product
+        )
+        
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

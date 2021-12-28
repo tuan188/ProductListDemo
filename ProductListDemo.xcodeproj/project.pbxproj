@@ -20,10 +20,13 @@
 		175E97B32779ACB600C31B46 /* GetProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E97B22779ACB600C31B46 /* GetProductList.swift */; };
 		175E97B62779ADA900C31B46 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E97B52779ADA900C31B46 /* UserRepository.swift */; };
 		175E97BC2779AE1800C31B46 /* ProductGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E97BB2779AE1800C31B46 /* ProductGateway.swift */; };
-		175E97BE2779AE8300C31B46 /* ProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E97BD2779AE8300C31B46 /* ProductRepository.swift */; };
+		177C748E277AEE4300852E86 /* ProductDetailsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177C7489277AEE4300852E86 /* ProductDetailsAssembler.swift */; };
+		177C748F277AEE4300852E86 /* ProductDetailsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177C748A277AEE4300852E86 /* ProductDetailsNavigator.swift */; };
+		177C7490277AEE4300852E86 /* ProductDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177C748B277AEE4300852E86 /* ProductDetailsUseCase.swift */; };
+		177C7491277AEE4300852E86 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177C748C277AEE4300852E86 /* ProductDetailsViewController.swift */; };
+		177C7492277AEE4300852E86 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177C748D277AEE4300852E86 /* ProductDetailsViewModel.swift */; };
 		17FAC1892779A15500E3C190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FAC1882779A15500E3C190 /* AppDelegate.swift */; };
 		17FAC18B2779A15500E3C190 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 17FAC18A2779A15500E3C190 /* Podfile */; };
-		17FAC18D2779A15500E3C190 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 17FAC18C2779A15500E3C190 /* .swiftlint.yml */; };
 		17FAC18F2779A15500E3C190 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FAC18E2779A15500E3C190 /* Assembler.swift */; };
 		17FAC1912779A15500E3C190 /* UnitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FAC1902779A15500E3C190 /* UnitTestViewController.swift */; };
 		17FAC1942779A15500E3C190 /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FAC1932779A15500E3C190 /* APIUrls.swift */; };
@@ -66,11 +69,14 @@
 		175E97B22779ACB600C31B46 /* GetProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductList.swift; sourceTree = "<group>"; };
 		175E97B52779ADA900C31B46 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		175E97BB2779AE1800C31B46 /* ProductGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGateway.swift; sourceTree = "<group>"; };
-		175E97BD2779AE8300C31B46 /* ProductRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductRepository.swift; path = ../../../../../.Trash/ProductRepository.swift; sourceTree = "<group>"; };
+		177C7489277AEE4300852E86 /* ProductDetailsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsAssembler.swift; sourceTree = "<group>"; };
+		177C748A277AEE4300852E86 /* ProductDetailsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsNavigator.swift; sourceTree = "<group>"; };
+		177C748B277AEE4300852E86 /* ProductDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsUseCase.swift; sourceTree = "<group>"; };
+		177C748C277AEE4300852E86 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		177C748D277AEE4300852E86 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		17FAC1852779A15500E3C190 /* ProductListDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductListDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FAC1882779A15500E3C190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17FAC18A2779A15500E3C190 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
-		17FAC18C2779A15500E3C190 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
 		17FAC18E2779A15500E3C190 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		17FAC1902779A15500E3C190 /* UnitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
 		17FAC1932779A15500E3C190 /* APIUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
@@ -138,10 +144,21 @@
 		175E97B42779AD6100C31B46 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				175E97BD2779AE8300C31B46 /* ProductRepository.swift */,
 				175E97B52779ADA900C31B46 /* UserRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		177C7488277AEE2A00852E86 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				177C7489277AEE4300852E86 /* ProductDetailsAssembler.swift */,
+				177C748A277AEE4300852E86 /* ProductDetailsNavigator.swift */,
+				177C748B277AEE4300852E86 /* ProductDetailsUseCase.swift */,
+				177C748C277AEE4300852E86 /* ProductDetailsViewController.swift */,
+				177C748D277AEE4300852E86 /* ProductDetailsViewModel.swift */,
+			);
+			path = ProductDetails;
 			sourceTree = "<group>";
 		};
 		17FAC17C2779A15500E3C190 = {
@@ -167,7 +184,6 @@
 			children = (
 				17FAC1882779A15500E3C190 /* AppDelegate.swift */,
 				17FAC18A2779A15500E3C190 /* Podfile */,
-				17FAC18C2779A15500E3C190 /* .swiftlint.yml */,
 				17FAC18E2779A15500E3C190 /* Assembler.swift */,
 				17FAC1902779A15500E3C190 /* UnitTestViewController.swift */,
 				17FAC1C92779A15600E3C190 /* Assets.xcassets */,
@@ -248,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				17FAC1AA2779A15500E3C190 /* Storyboards.swift */,
+				177C7488277AEE2A00852E86 /* ProductDetails */,
 				175E979C2779A46B00C31B46 /* Products */,
 				17FAC1AC2779A15500E3C190 /* App */,
 				17FAC1B52779A15500E3C190 /* Main */,
@@ -318,6 +335,7 @@
 				17FAC1822779A15500E3C190 /* Frameworks */,
 				17FAC1832779A15500E3C190 /* Resources */,
 				86F669F0034CFC11CE50E042 /* [CP] Embed Pods Frameworks */,
+				177C7493277AF2F500852E86 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -369,7 +387,6 @@
 				17FAC1B72779A15500E3C190 /* Main.storyboard in Resources */,
 				175E97B02779AABA00C31B46 /* ProductCell.xib in Resources */,
 				175E97A82779A67F00C31B46 /* Product.storyboard in Resources */,
-				17FAC18D2779A15500E3C190 /* .swiftlint.yml in Resources */,
 				17FAC1CD2779A15600E3C190 /* LaunchScreen.storyboard in Resources */,
 				17FAC1CA2779A15600E3C190 /* Assets.xcassets in Resources */,
 				17FAC18B2779A15500E3C190 /* Podfile in Resources */,
@@ -379,6 +396,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		177C7493277AF2F500852E86 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		86F669F0034CFC11CE50E042 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,16 +462,21 @@
 				17FAC1942779A15500E3C190 /* APIUrls.swift in Sources */,
 				17FAC1BB2779A15500E3C190 /* MainAssembler.swift in Sources */,
 				17FAC1A12779A15500E3C190 /* APIInput.swift in Sources */,
+				177C748E277AEE4300852E86 /* ProductDetailsAssembler.swift in Sources */,
 				17FAC1B42779A15500E3C190 /* AppViewModel.swift in Sources */,
+				177C7491277AEE4300852E86 /* ProductDetailsViewController.swift in Sources */,
+				177C7490277AEE4300852E86 /* ProductDetailsUseCase.swift in Sources */,
 				17FAC1B92779A15500E3C190 /* Storyboards+Main.swift in Sources */,
 				17FAC1C12779A15500E3C190 /* MainViewController.swift in Sources */,
 				17FAC1912779A15500E3C190 /* UnitTestViewController.swift in Sources */,
 				17FAC1B22779A15500E3C190 /* AppUseCase.swift in Sources */,
 				17FAC18F2779A15500E3C190 /* Assembler.swift in Sources */,
+				177C748F277AEE4300852E86 /* ProductDetailsNavigator.swift in Sources */,
 				175E97A62779A48B00C31B46 /* ProductsViewModel.swift in Sources */,
 				175E97A32779A48B00C31B46 /* ProductsNavigator.swift in Sources */,
 				17FAC1BF2779A15500E3C190 /* MainUseCase.swift in Sources */,
 				17FAC1A82779A15500E3C190 /* GatewaysAssembler.swift in Sources */,
+				177C7492277AEE4300852E86 /* ProductDetailsViewModel.swift in Sources */,
 				17FAC1B02779A15500E3C190 /* AppNavigator.swift in Sources */,
 				175E97B62779ADA900C31B46 /* UserRepository.swift in Sources */,
 				175E97B32779ACB600C31B46 /* GetProductList.swift in Sources */,
@@ -446,7 +485,6 @@
 				17FAC1A32779A15500E3C190 /* APIOutput.swift in Sources */,
 				17FAC1C62779A15500E3C190 /* UIViewController+.swift in Sources */,
 				175E97A52779A48B00C31B46 /* ProductsViewController.swift in Sources */,
-				175E97BE2779AE8300C31B46 /* ProductRepository.swift in Sources */,
 				17FAC1AE2779A15500E3C190 /* AppAssembler.swift in Sources */,
 				17FAC1C32779A15500E3C190 /* MainViewModel.swift in Sources */,
 				17FAC1AB2779A15500E3C190 /* Storyboards.swift in Sources */,

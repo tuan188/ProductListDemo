@@ -8,7 +8,7 @@
 import UIKit
 import Reusable
 
-class ProductCell: UITableViewCell, NibReusable {
+final class ProductCell: UITableViewCell, NibReusable {
 
     override func awakeFromNib() {
         super.awakeFromNib()

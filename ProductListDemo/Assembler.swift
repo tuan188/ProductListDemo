@@ -9,6 +9,7 @@ protocol Assembler: AnyObject,
                     MainAssembler,
                     AppAssembler,
                     ProductsAssembler,
+                    ProductDetailsAssembler,
                     GatewaysAssembler {
     
 }

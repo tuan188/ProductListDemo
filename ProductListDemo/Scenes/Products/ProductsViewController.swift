@@ -46,7 +46,10 @@ final class ProductsViewController: UIViewController, Bindable {
     }
     
     func bindViewModel() {
-        let input = ProductsViewModel.Input(loadTrigger: Driver.just(()))
+        let input = ProductsViewModel.Input(
+            loadTrigger: Driver.just(()),
+            selectProductTrigger: tableView.rx.itemSelected.asDriver()
+        )
         
         let output = viewModel.transform(input, disposeBag: disposeBag)
         
@@ -82,7 +85,9 @@ extension ProductsViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension ProductsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 // MARK: - StoryboardSceneBased
