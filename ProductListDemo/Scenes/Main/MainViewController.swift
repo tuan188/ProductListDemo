@@ -45,7 +45,7 @@ final class MainViewController: UIViewController, Bindable {
             toProductlistTrigger: productListButton.rx.tap.asDriver()
         )
 
-        let output = viewModel.transform(input, disposeBag: disposeBag)
+        _ = viewModel.transform(input, disposeBag: disposeBag)
     }
 }
 

@@ -23,6 +23,8 @@ final class ProductsViewController: UIViewController, Bindable {
     var disposeBag = DisposeBag()
     
     var products = [Product]()
+    var editProductSubject = PublishSubject<IndexPath>()
+    var deleteProductSubject = PublishSubject<IndexPath>()
     
     // MARK: - Life Cycle
     
@@ -42,22 +44,35 @@ final class ProductsViewController: UIViewController, Bindable {
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = 90
         tableView.register(cellType: ProductCell.self)
     }
     
     func bindViewModel() {
+//        let loadTrigger = rx.sentMessage(#selector(viewWillAppear(_:)))
+//            .take(1)
+//            .asDriverOnErrorJustComplete()
+//            .mapToVoid()
+        
         let input = ProductsViewModel.Input(
-            loadTrigger: Driver.just(()),
-            selectProductTrigger: tableView.rx.itemSelected.asDriver()
+            loadTrigger: .just(()),
+            selectProductTrigger: tableView.rx.itemSelected.asDriver(),
+            editProductTrigger: editProductSubject.asDriverOnErrorJustComplete(),
+            deleteProductTrigger: deleteProductSubject.asDriverOnErrorJustComplete()
         )
         
         let output = viewModel.transform(input, disposeBag: disposeBag)
         
         output.products
             .drive(onNext: { [weak self] products in // subcribe
+                print("output products")
                 self?.products = products
                 self?.tableView.reloadData()
             })
+            .disposed(by: disposeBag)
+        
+        output.isLoading
+            .drive(rx.isLoading)
             .disposed(by: disposeBag)
     }
 }
@@ -76,8 +91,22 @@ extension ProductsViewController: UITableViewDataSource {
         let product = products[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: ProductCell.self)
-        cell.textLabel?.text = product.name
-        cell.detailTextLabel?.text = "\(product.price)"
+        cell.nameLabel?.text = product.name
+        cell.priceLabel?.text = "\(product.price)"
+        
+//        cell.deleteButton.rx.tap
+//            .subscribe(onNext: { _ in
+//
+//            })
+//            .disposed(by: cell.disposeBag)
+        
+        cell.editProduct = { [weak self] in
+            self?.editProductSubject.onNext(indexPath)
+        }
+        
+        cell.deleteProduct = { [weak self] in
+            self?.deleteProductSubject.onNext(indexPath)
+        }
         
         return cell
     }
