@@ -21,6 +21,8 @@ extension ProductsViewModel: ViewModel {
         let selectProductTrigger: Driver<IndexPath>
         let editProductTrigger: Driver<IndexPath>
         let deleteProductTrigger: Driver<IndexPath>
+        let createProductTrigger: Driver<Void>
+        let createdProductTrigger: Driver<Product>
     }
     
     struct Output {
@@ -36,7 +38,7 @@ extension ProductsViewModel: ViewModel {
         let activityIndicator = ActivityIndicator()
         let isLoading = activityIndicator.asDriver()
         
-        input.loadTrigger
+        Driver.merge(input.loadTrigger, input.createdProductTrigger.mapToVoid())
             .flatMapLatest {
                 return self.useCase.getProductList()
                     .trackActivity(activityIndicator)
@@ -62,7 +64,6 @@ extension ProductsViewModel: ViewModel {
                 return (indexPath, products)
             }
             .drive(onNext: { indexPath, products in
-//                let products = productsSubject.value  // stateful   stateless
                 let product = products[indexPath.row]
                 let updatedProducts = products.filter { $0.id != product.id }
                 productsSubject.onNext(updatedProducts)
@@ -75,6 +76,12 @@ extension ProductsViewModel: ViewModel {
             }
             .drive(onNext: { product in
                 print("Edit product", product.name)
+            })
+            .disposed(by: disposeBag)
+        
+        input.createProductTrigger
+            .drive(onNext: {
+                self.navigator.toCreateProduct()
             })
             .disposed(by: disposeBag)
         

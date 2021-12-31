@@ -16,6 +16,7 @@ final class ProductsViewController: UIViewController, Bindable {
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var createProductButton: UIBarButtonItem!
     
     // MARK: - Properties
     
@@ -50,15 +51,21 @@ final class ProductsViewController: UIViewController, Bindable {
     
     func bindViewModel() {
 //        let loadTrigger = rx.sentMessage(#selector(viewWillAppear(_:)))
-//            .take(1)
 //            .asDriverOnErrorJustComplete()
 //            .mapToVoid()
+        
+        let createdProductTrigger = NotificationCenter.default.rx.notification(.createdProduct)
+            .map { $0.object as? Product }
+            .unwrap()
+            .asDriverOnErrorJustComplete()
         
         let input = ProductsViewModel.Input(
             loadTrigger: .just(()),
             selectProductTrigger: tableView.rx.itemSelected.asDriver(),
             editProductTrigger: editProductSubject.asDriverOnErrorJustComplete(),
-            deleteProductTrigger: deleteProductSubject.asDriverOnErrorJustComplete()
+            deleteProductTrigger: deleteProductSubject.asDriverOnErrorJustComplete(),
+            createProductTrigger: createProductButton.rx.tap.asDriver(),
+            createdProductTrigger: createdProductTrigger
         )
         
         let output = viewModel.transform(input, disposeBag: disposeBag)

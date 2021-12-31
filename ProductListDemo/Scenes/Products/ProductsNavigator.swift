@@ -9,6 +9,7 @@ import UIKit
 
 protocol ProductsNavigatorType {
     func toProductDetail(product: Product)
+    func toCreateProduct()
 }
 
 struct ProductsNavigator: ProductsNavigatorType {
@@ -24,5 +25,14 @@ struct ProductsNavigator: ProductsNavigatorType {
         )
         
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func toCreateProduct() {
+        let nav = UINavigationController()
+        let vc: CreateProductViewController = assembler.resolve(navigationController: nav)
+        nav.viewControllers = [vc]
+        nav.modalPresentationStyle = .fullScreen
+        
+        navigationController.present(nav, animated: true, completion: nil)
     }
 }
